@@ -46,6 +46,10 @@ class Player {
 
 	takeCardFromDeck() {
 		this.addCard(this.table.cardDeck.getLastCard());
+		
+		if(this.table.isPlaying()) {
+			this.table.nextMove();
+		}
 	}
 
 	kill() {

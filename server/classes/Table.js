@@ -13,6 +13,7 @@ class Table {
 		this.cardDeck = new CardDeck(this);
 		this.usedCards = [];
 		this.events = [];
+		this.activePlayerName = null;
 	}
 
 	regNewUser(name) {
@@ -33,7 +34,15 @@ class Table {
 			player.takeCardFromDeck();
 		}
 
+		if(!this.activePlayerName) {
+			this.activePlayerName = name;
+		}
+
 		return name;
+	}
+
+	isPlaying() {
+		return this.status == "runing";
 	}
 
 	getPlayers() {
@@ -47,6 +56,8 @@ class Table {
 
 	startGame() {
 		this.status = "runing";
+		this.cardsDeck.initSpecialCards();
+		this.shuffleCards();
 	}
 
 	stopGame() {
@@ -72,6 +83,18 @@ class Table {
 		const events = this.events;
 		this.events = [];
 		return events;
+	}
+
+	nextMove() {
+		let inx = this.players.map(pl => pl.name).indexOf(this.activePlayerName);
+		inx++;
+		if(inx > this.players.length - 1) {
+			inx = 0;
+		} else if(inx < 0) {
+			inx = this.players.length - 1;
+		}
+
+		this.activePlayerName = this.players[inx].name;
 	}
 }
 

@@ -1,0 +1,14 @@
+.card-skin {
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	&.card-skin-regular {
+		background-image: url("/client/imgs/card-skins/regular.png");
+	}
+
+	&.card-skin-killer {
+		background-color: #3d3746;
+		background-image: url("/client/imgs/card-skins/killer.png");
+	}
+}

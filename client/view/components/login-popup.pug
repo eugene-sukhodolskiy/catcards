@@ -1,0 +1,11 @@
+.popup-overlay#login-form-popup
+  .popup
+    .popup-header
+      h2 Вход
+    .popup-content
+      form#login-form(action="/player/new" method="get")
+        .form-wrap
+          label(for="username") Имя:
+          input#username(type="text" name="name" placeholder="Имя")
+        .form-wrap
+          button(type="submit") Войти

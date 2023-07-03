@@ -1,4 +1,7 @@
 exports.config = {
-	startedPlayerCardsPack: 6,
-	startedDeckCards: 100
+	startedPlayerCardsPack: 16,
+	deck: {
+		amountRegulars: 90,
+		amountKillers: 10
+	}
 }

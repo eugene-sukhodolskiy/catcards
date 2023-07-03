@@ -15,4 +15,4 @@ class Killer extends Card {
 	}
 }
 
-exports.Regular = Regular;
+exports.Killer = Killer;

@@ -1,0 +1,14 @@
+html {
+	font-family: sans-serif;
+}
+
+body {
+	background-color: #333;
+}
+
+@import "components/login-popup.scss";
+@import "components/player-list.scss";
+@import "components/hand-cards.scss";
+@import "card-skins.scss";
+@import "components/user-bar.scss";
+@import "components/card-deck.scss";
